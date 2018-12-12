@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	 <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="icon" type="image/png" href="css/images/favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link 
+        rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<title>Moog's Bakery</title>
+</head>
+<body>
+
+	<!-- navigation bar -->
+	<div class="navbar navbar-light">
+	     <div class="container">
+	     	<!-- Brand and toggle get grouped for better mobile display -->
+	     	<div class="navbar-header">  
+	        	<ul class="nav-bar-list">
+	            	<li id="logo" class="menu-text"><a href="index.html">MOOG'S BAKERY</a></li>
+	            </ul>
+	        </div>
+	     </div>
+	</div>
+
+	<!-- banner image and text -->
+	<div class="banner">
+		<div id="hero-text">
+	    	<h1 class="display-4">MOOG'S BAKERY</h1>
+	    	<h3>Grab a Slice</h3>
+	  </div>
+	</div>
+	<br>
+	<br>
+
+	<!-- reservations header -->
+	<div class="reservations">
+		<div class="container">
+	    	<h2>RESERVATIONS</h2>
+	  	</div>
+	</div>
+	<br>
+	<br>
+	   
+	<!-- reservations form -->   
+	
+	<div class="container">
+  		<div class="row">
+    		<div class="col">
+    		<h4>Make a Reservation</h4>	
+      		<form>
+  				<div class="form-group">
+			    <label for="exampleInputEmail1">Name</label>
+			    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+  			</div>
+  			<div class="form-group">
+    			<label for="exampleInputPassword1">Password</label>
+    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  			</div>
+  			<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+    	</div>
+    <!-- existing reservations table -->  
+    <div class="col">
+    	<h4>Existing Reservations</h4>	
+    	<br>
+      <table class="table">
+		<thead>
+			<th>Name</th>
+			<th>Day</th>
+		</thead>
+		<tbody> </tbody>
+	  </table>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+
+	<div class="reservations">
+		<div class="container">
+	    	<h2>COME DINE WITH US</h2>
+	  	</div>
+	</div>
+	<br>
+
+      <div class="container-fluid restaurant-locator">
+         <div class="row">
+            <div id="map" class="col-md-12" style="height:100vh"></div>
+         </div>
+      </div>
+	<br>
+	<br>
+	<br>
+
+	<div class="reservations">
+		<div class="container">
+	    	<h2>CUSTOMER REVIEWS</h2>
+	  	</div>
+	</div>
+	<br>
+	<div class="container">
+  		<div class="row">
+    		<div class="col">
+      			<div class="container">
+  					<img src="css/images/avatar_male.png" alt="Avatar" style="width:90px">
+  					<p><span>Jake.</span> Human soldier turned giant blue alien.</p>
+  					<p>I'd eat here again if I ever turn back into a human!.</p>
+				</div>
+    		</div>
+    <!-- existing reservations table -->  
+    <div class="col">
+      		<div class="container">
+  				<img src="css/images/avatar.png" alt="Avatar" style="width:90px">
+  				<p><span>Neytiri.</span> Leader of the Omaticaya</p>
+  				<p>Best bread would eat again!</p>
+			</div>
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <script id="reservation-template" type="text/x-handlebars-template">
+	    <li data-id="{{reservationId}}">
+	      <p>Hi, {{name}}. Your reservation is all set for {{day}}.</p>
+	    </li>
+  </script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <!-- bootstrap js -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- handlebars -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <!-- custom js -->
+  <script src="js/main.js"></script>
+   <!-- google maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDbt1M_Y1NT5NIZ27O1y0L-PXT5-bEIjs" async defer></script>
+</body>
+</html>
+
+
+
+<!-- <div class="column row">
+        <hr>
+        <ul class="tabs" data-tabs="" id="example-tabs">
+            <li class="tabs-title is-active">
+                <a aria-selected="true" href="#panel1">Reviews</a>
+            </li>
+            <li class="tabs-title">
+                <a href="#panel2">Similar Products</a>
+            </li>
+        </ul>
+        <div class="tabs-content" data-tabs-content="example-tabs">
+            <div class="tabs-panel is-active" id="panel1">
+                <h4>Reviews</h4>
+                <div class="media-object stack-for-small">
+                    <div class="media-object-section"><img class="thumbnail"
+                    src="https://placekitten.com/g/100/100"></div>
+                    <div class="media-object-section">
+                        <h5>Mike Stevenson</h5>
+                        <p>I'm going to improvise. Listen, there's something
+                        you should know about me... about inception. An idea is
+                        like a virus, resilient, highly contagious. The
+                        smallest seed of an idea can grow. It can grow to
+                        define or destroy you.</p>
+                    </div>
+                </div>
+                <div class="media-object stack-for-small">
+                    <div class="media-object-section"><img class="thumbnail"
+                    src="https://placekitten.com/g/100/100"></div>
+                    <div class="media-object-section">
+                        <h5>Mike Stevenson</h5>
+                        <p>I'm going to improvise. Listen, there's something
+                        you should know about me... about inception. An idea is
+                        like a virus, resilient, highly contagious. The
+                        smallest seed of an idea can grow. It can grow to
+                        define or destroy you</p>
+                    </div>
+                </div>
+                <div class="media-object stack-for-small">
+                    <div class="media-object-section"><img class="thumbnail"
+                    src="https://placekitten.com/g/100/100"></div>
+                    <div class="media-object-section">
+                        <h5>Mike Stevenson</h5>
+                        <p>I'm going to improvise. Listen, there's something
+                        you should know about me... about inception. An idea is
+                        like a virus, resilient, highly contagious. The
+                        smallest seed of an idea can grow. It can grow to
+                        define or destroy you</p>
+                    </div>
+                </div><label>My Review 
+                <textarea placeholder="None"></textarea></label> <button class=
+                "button alert">Submit Review</button>
+            </div>
+            <div class="tabs-panel" id="panel2">
+                <div class="row medium-up-3 large-up-5">
+                    <div class="column">
+                        <img class="thumbnail" src=
+                        "https://placehold.it/350x200">
+                        <h5>Other Product <small>$22</small></h5>
+                        <p>In condimentum facilisis porta. Sed nec diam eu diam
+                        mattis viverra. Nulla fringilla, orci ac euismod
+                        semper, magna diam.</p><a class=
+                        "button hollow tiny expanded" href="#">Buy Now</a>
+                    </div>
+                    <div class="column">
+                        <img class="thumbnail" src=
+                        "https://placehold.it/350x200">
+                        <h5>Other Product <small>$22</small></h5>
+                        <p>In condimentum facilisis porta. Sed nec diam eu diam
+                        mattis viverra. Nulla fringilla, orci ac euismod
+                        semper, magna diam.</p><a class=
+                        "button hollow tiny expanded" href="#">Buy Now</a>
+                    </div>
+                    <div class="column">
+                        <img class="thumbnail" src=
+                        "https://placehold.it/350x200">
+                        <h5>Other Product <small>$22</small></h5>
+                        <p>In condimentum facilisis porta. Sed nec diam eu diam
+                        mattis viverra. Nulla fringilla, orci ac euismod
+                        semper, magna diam.</p><a class=
+                        "button hollow tiny expanded" href="#">Buy Now</a>
+                    </div>
+                    <div class="column">
+                        <img class="thumbnail" src=
+                        "https://placehold.it/350x200">
+                        <h5>Other Product <small>$22</small></h5>
+                        <p>In condimentum facilisis porta. Sed nec diam eu diam
+                        mattis viverra. Nulla fringilla, orci ac euismod
+                        semper, magna diam.</p><a class=
+                        "button hollow tiny expanded" href="#">Buy Now</a>
+                    </div>
+                    <div class="column">
+                        <img class="thumbnail" src=
+                        "https://placehold.it/350x200">
+                        <h5>Other Product <small>$22</small></h5>
+                        <p>In condimentum facilisis porta. Sed nec diam eu diam
+                        mattis viverra. Nulla fringilla, orci ac euismod
+                        semper, magna diam.</p><a class=
+                        "button hollow tiny expanded" href="#">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="row column">
+        <hr>
+        <ul class="menu">
+            <li>Kitten Store</li>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+            <li class="float-right">Copyright 2016</li>
+        </ul>
+    </div>
+
+    -->
